@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>My Website</title>
+  </head>
+  <body>
+    <header class="header-wrapper">
+      <img class="logo" src="logo.svg" alt="logo-revoU" />
+      <div class="menu">
+        <button class="home">Home</button>
+        <button onclick="location.href='profile.html'" class="our profile">Our Profile</button>
+        <button class="achievement">Achievement</button>
+        <button class="message-us">Message Us</button>
+      </div>
+    </header>
+    <hr />
+    <main>
+      <h3>Hi <span id="nama"></span>, Welcome to Website</h3>
+    </main>
+    <section id="slider" class="banner">
+      <div class="slideshow-container">
+        <img class="img-slideshow" src="assets/banner_1.png" />
+        <img class="img-slideshow" src="assets/banner_2.png" />
+        <img class="img-slideshow" src="assets/banner_3.png" />
+        <br />
+        <button class="prev" onclick="plusDivs(-1)">Previous</button>
+        <button class="next" onclick="plusDivs(1)">Next</button>
+      </div>
+    </section>
+    <hr />
+    <section id="facility">
+      <div id="title" class="row-facility">
+        <h2>Our Facilitation</h2>
+      </div>
+      <div class="container-facility">
+        <div class="gambar-teks-container">
+          <img src="assets/facility_1.jpg" width="150" class="rounded-circle" />
+          <p>Professional Teacher</p>
+        </div>
+        <div class="gambar-teks-container">
+          <img src="assets/facility_2.jpg" width="150" class="rounded-circle" />
+          <p>Sportfield</p>
+        </div>
+        <div class="gambar-teks-container">
+          <img src="assets/facility_3.jpg" width="150" class="rounded-circle" />
+          <p>Classroom</p>
+        </div>
+      </div>
+    </section>
+    <hr />
+    <section id="message">
+      <div class="container-message">
+        <h2 class="message-title">Message Us</h2>
+        <div class="row-top">
+          <div class="col-top">
+            <div class="col-message-form">
+              <form id="msg-form" .name="msg-form" onsubmit="return validateForm()">
+                <div class="row-message-form">
+                  <div class="col-l">
+                    <label class="label-1" for="nama">Nama</label>
+                    <br />
+                    <label class="label-1" for="tanggal">Tanggal Lahir</label>
+                    <br />
+                    <label class="label-1" for="kelamin">Jenis Kelamin</label>
+                    <br />
+                    <label class="label-1" for="pesan">Pesan</label>
+                    <br />
+                  </div>
+                  <div class="col-mid">
+                    <b>: </b>
+                    <br />
+                    <b>: </b>
+                    <br />
+                    <b>: </b>
+                    <br />
+                    <b>: </b>
+                    <br />
+                  </div>
+                  <div class="col-r">
+                    <input class="label-n" type="text" id="nama" name="nama" placeholder="Nama" />
+                    <br />
+                    <input class="label-t" type="date" id="tanggal" name="tanggal" placeholder="dd-mm-yyyy" />
+                    <br />
+                    <input class="radio-k" type="radio" id="laki" name="kelamin" value="laki" />
+                    <label for="laki">Laki-Laki</label>
+                    <input class="radio-k" type="radio" id="perempuan" name="kelamin" value="perempuan" />
+                    <label for="perempuan">Perempuan</label>
+                    <br />
+                    <input class="label-p" type="text" id="pesan" name="pesan" placeholder="Pesan" />
+                    <br />
+                  </div>
+                </div>
+                <input class="btn-submit" type="submit" value="Submit" />
+              </form>
+            </div>
+          </div>
+          <div class="col-message-show">
+            <div class="message-show">
+              <p>
+                <b>Current time :</b> <span id="sender-time"></span>
+                <br />
+                <br />
+                <b>Nama :</b> <span id="sender-nama"></span>
+                <br />
+                <b>Tanggal Lahir :</b> <span id="sender-tanggal"></span>
+                <br />
+                <b>Jenis Kelamin :</b> <span id="sender-kelamin"></span>
+                <br />
+                <b>Pesan :</b> <span id="sender-pesan"></span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <hr />
+  </body>
+  <footer>
+    <p>Created By Eko Nofiyanto</p>
+  </footer>
+  <hr />
+  <script>
+    var nama = prompt("Masukkan nama kamu");
+    document.getElementById("nama").innerText = nama;
+    var slideIndex = 1;
+    showDivs(slideIndex);
+
+    function plusDivs(n) {
+      showDivs((slideIndex += n));
+    }
+
+    function showDivs(n) {
+      var i;
+      var imgList = document.getElementsByClassName("img-slideshow");
+      if (n < 1) slideIndex = imgList.length;
+      for (i = 0; i < imgList.length; i++) {
+        imgList[i].style.display = "none";
+      }
+      imgList[slideIndex - 1].style.display = "block";
+    }
+
+    function validateForm() {
+      var today = new Date();
+      var nama = document.forms["msg-form"]["nama"].value;
+      var tanggal = document.forms["msg-form"]["tanggal"].value;
+      var kelamin = document.forms["msg-form"]["kelamin"].value;
+      var pesan = document.forms["msg-form"]["pesan"].value;
+
+      var tanggalArr = tanggal.split("-");
+      var newTanggal = tanggalArr[2] + "-" + tanggalArr[1] + "-" + tanggalArr[0];
+
+      var newToday = today.toString().slice(0, 33);
+
+      document.getElementById("sender-time").innerText = newToday;
+      document.getElementById("sender-nama").innerHTML = nama;
+      document.getElementById("sender-tanggal").innerHTML = newTanggal;
+      document.getElementById("sender-kelamin").innerHTML = kelamin;
+      document.getElementById("sender-pesan").innerHTML = pesan;
+      return false;
+    }
+  </script>
+</html>

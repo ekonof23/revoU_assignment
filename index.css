@@ -1,0 +1,260 @@
+hr {
+  height: 1px;
+  border: none;
+  background-color: black;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
+}
+
+/* navbar */
+.menu {
+  justify-content: flex-end;
+  align-items: center;
+}
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  width: 100%;
+}
+.header-wrapper > .menu > button {
+  background-color: white;
+  padding: 8px 16px;
+  border: 1px solid gray;
+  cursor: pointer;
+  transition: 0.4s background-color ease-out;
+}
+.header-wrapper > .menu > button:hover {
+  background-color: gainsboro;
+}
+.logo {
+  width: auto;
+  height: 50px;
+  margin-bottom: 14px;
+}
+
+/* slider */
+.banner {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+.slideshow-container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+.img-slideshow {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+.prev {
+  width: 80px;
+  cursor: pointer;
+}
+.next {
+  width: 80px;
+  cursor: pointer;
+}
+
+/* facility */
+.row-facility {
+  margin-left: 180px;
+}
+.rounded-circle {
+  border-radius: 50%;
+  margin: 40px;
+  display: flex;
+}
+.container-facility {
+  max-width: 100%;
+  justify-content: space-between;
+  display: flex;
+  padding-left: 180px;
+}
+.container-facility img {
+  margin: 10px;
+  display: flex;
+}
+
+/* form */
+.label-n {
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid;
+}
+.label-t {
+  width: 100%;
+  border-radius: 3px;
+  border: 1px solid;
+  margin-top: 3px;
+}
+.label-p {
+  width: 100%;
+  height: 100px;
+  text-align: left;
+  border-radius: 3px;
+  border: 1px solid;
+}
+.message-show {
+  border: 1px solid;
+  width: 100%;
+  height: auto;
+}
+.col-message-show {
+  display: flex;
+  margin-left: 5em;
+  width: 50%;
+}
+.row-message-form {
+  display: flex;
+}
+.container-message {
+  margin-bottom: 50px;
+}
+.message-title {
+  margin-left: 10%;
+}
+.row-top {
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-left: 10%;
+}
+.btn-submit {
+  width: 100%;
+  height: 30px;
+  margin-top: 10px;
+  border-radius: 3px;
+  border: 1px solid;
+  cursor: pointer;
+}
+
+/* footer */
+footer p {
+  text-align: right;
+  padding: 20px;
+  padding-right: 30px;
+}
+
+/* lebar layar kecil */
+@media screen and (max-width: 600px) {
+  /* navbar */
+  .header-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+  .header-wrapper > .menu {
+    width: 100%;
+  }
+  .header-wrapper > .menu > button {
+    width: 100%;
+  }
+
+  /* facility */
+  .container-facility {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .container-facility img {
+    max-width: 100%;
+    height: auto;
+    padding: 1px;
+  }
+  .teks-container {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .teks-container p {
+    padding: 5px;
+    margin: 5px;
+  }
+
+  .gambar-teks-container {
+    max-width: 100%;
+  }
+
+  .gambar-teks-container img {
+    max-width: 100%;
+  }
+
+  .gambar-teks-container p {
+    max-width: 100%;
+  }
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .gambar-teks-container {
+    flex-basis: 30%;
+  }
+
+  .container-message {
+    display: block;
+  }
+
+  .btn-submit {
+    width: 65%;
+  }
+  .col-top {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .col-message-show {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .row-top {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+/* lebar layar besar */
+@media screen and (min-width: 601px) {
+  .header-wrapper {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    display: flex;
+  }
+  .header-wrapper > .menu {
+    display: flex;
+    width: 100%;
+  }
+
+  .container {
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .gambar-teks-container {
+    margin-bottom: 20px;
+    flex-basis: 80%;
+  }
+
+  .gambar-teks-container > p {
+    text-align: center;
+  }
+
+  .gambar-teks-container > img {
+    align-items: center;
+  }
+}
