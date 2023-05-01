@@ -62,6 +62,10 @@ hr {
 }
 
 /* facility */
+figcaption {
+  text-align: center;
+  font-size: larger;
+}
 .row-facility {
   margin-left: 180px;
 }
